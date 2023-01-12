@@ -1,9 +1,13 @@
-<div class="flex flex-col h-screen bg-tipplers-lightest">
-	<div class="m-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
+<script lang="ts">
+	export let data: any;
+</script>
+
+<div class="flex flex-col h-screen bg-tipplers-lightest/50 overflow-auto p-4">
+	<div class="hidden m-auto max-w-3xl">
 		<h1 class="text-3xl font-bold text-center underline font-serif mb-4">Tippler's Gallery</h1>
-		<h2 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">A <span class="text-tipplers-primary">compendium</span> of the <i class="font-serif text-tipplers-primary/80 font-normal">finest</i> cocktail recipes.</h2>
-		<p class="mt-6 text-lg leading-8 text-slate-800 sm:text-center">This project is currently under heavy development and <span class="italic underline font-serif">coming soon</span>. In the mean time, feel free to download the current library of delicious boozy concoctions below.</p>
-		<div class="mt-8 flex gap-x-4 sm:justify-center">
+		<h2 class="font-bold tracking-tight text-center text-6xl">A <span class="text-tipplers-primary">compendium</span> of the <i class="font-serif text-tipplers-primary/80 font-normal">finest</i> cocktail recipes.</h2>
+		<p class="mt-6 text-lg leading-8 text-slate-800 text-center">This project is currently under heavy development and <span class="italic underline font-serif">coming soon</span>. In the mean time, feel free to download the current library of delicious boozy concoctions below.</p>
+		<div class="mt-8 flex gap-x-4 justify-center">
 			<a href="/cocktails.json" class="inline-block rounded-lg bg-tipplers-primary px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-md hover:bg-tipplers-primary/90">
 				Download
 				<svg class="inline-block h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -13,15 +17,28 @@
 		</div>
 	</div>
 
-	<footer class="text-center text-sm text-slate-500 mt-16 mb-4">
+	<div class="container mx-auto max-w-7xl">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{#each data.cocktails as cocktail}
+				<div class="relative shadow-sm rounded-b-2xl">
+					<div class="flex bg-white shadow-md cursor-pointer max-h-64 overflow-hidden rounded-tr-2xl rounded-tl-2xl">
+						<img class="hover:scale-125 ease-in duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
+						<a href={cocktail.source_url} target="_blank" rel="noreferrer" title="">
+							<span class="absolute top-64 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-1 ring-4 ring-white/50 rounded-full overflow-hidden bg-white">
+								<img class="h-6 w-6" src="https://www.thebar.com/icons/apple-touch-icon.png" alt="" />
+							</span>
+						</a>
+					</div>
+					<div class="bg-white bottom-0 w-full text-center py-6 font-bold rounded-b-2xl">
+						<h3 class="">{cocktail.name}</h3>
+					</div>
+				</div>
+			{/each}
+		</div>
+	</div>
+	<footer class="text-center text-sm text-slate-400 mt-16 mb-4">
 		Made with
-		<svg class="w-5 h-5 text-slate-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-			<path
-				clip-rule="evenodd"
-				fill-rule="evenodd"
-				d="M10.5 3.798v5.02a3 3 0 01-.879 2.121l-2.377 2.377a9.845 9.845 0 015.091 1.013 8.315 8.315 0 005.713.636l.285-.071-3.954-3.955a3 3 0 01-.879-2.121v-5.02a23.614 23.614 0 00-3 0zm4.5.138a.75.75 0 00.093-1.495A24.837 24.837 0 0012 2.25a25.048 25.048 0 00-3.093.191A.75.75 0 009 3.936v4.882a1.5 1.5 0 01-.44 1.06l-6.293 6.294c-1.62 1.621-.903 4.475 1.471 4.88 2.686.46 5.447.698 8.262.698 2.816 0 5.576-.239 8.262-.697 2.373-.406 3.092-3.26 1.47-4.881L15.44 9.879A1.5 1.5 0 0115 8.818V3.936z"
-			/>
-		</svg>
+		<svg class="w-6 h-6 text-red-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
 		by
 		<a href="https://wilhelm.codes" title="It me." class="font-semibold border-b hover:text-slate-400">wilhelm</a>
 		<img class="inline-block h-6 w-6 rounded-full border-2 border-slate-300 hover:border-slate-400 jello-animation" src="https://s.gravatar.com/avatar/7cc6bee5975704b299bd7355e8ba9356?s=40" alt="It me." />

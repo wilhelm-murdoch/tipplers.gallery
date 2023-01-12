@@ -1,11 +1,18 @@
 package main
 
 import (
+	"crypto/md5"
+	"encoding/hex"
+	"fmt"
 	"log"
 	"net/http"
+	"strings"
 	"time"
 
 	"github.com/PuerkitoBio/goquery"
+	"github.com/gosimple/slug"
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 type Ingredient struct {
@@ -15,7 +22,6 @@ type Ingredient struct {
 }
 
 type Instruction struct {
-	Order       int    `json:"order"`
 	Title       string `json:"title"`
 	Description string `json:"description"`
 }
@@ -49,6 +55,47 @@ type Cocktail struct {
 	GlassType    string        `json:"glass_type"`
 	SourcedFrom  string        `json:"sourced_from"`
 	SourceUrl    string        `json:"source_url"`
+}
+
+func NewCocktail(name, sourcedFrom, sourceUrl string) *Cocktail {
+	return &Cocktail{
+		Cid:         slug.Make(name),
+		Name:        name,
+		SourcedFrom: sourcedFrom,
+		SourceUrl:   sourceUrl,
+	}
+}
+
+func (c *Cocktail) PushTag(name string) {
+	c.Tags = append(c.Tags, Tag{
+		cases.Title(language.AmericanEnglish, cases.NoLower).String(strings.TrimSpace(name)), slug.Make(name),
+	})
+}
+
+func (c *Cocktail) PushIngredient(name string, measurement int, unit string) {
+	c.Ingredients = append(c.Ingredients, Ingredient{
+		cases.Title(language.AmericanEnglish, cases.NoLower).String(strings.TrimSpace(name)), measurement, unit,
+	})
+}
+
+func (c *Cocktail) PushInstruction(title, text string) {
+	c.Instructions = append(c.Instructions, Instruction{
+		cases.Title(language.AmericanEnglish, cases.NoLower).String(strings.TrimSpace(title)), strings.TrimSpace(text),
+	})
+}
+
+func (c *Cocktail) PushEquipment(count int, name string) {
+	c.Equipment = append(c.Equipment, Equipment{
+		count, cases.Title(language.AmericanEnglish, cases.NoLower).String(strings.TrimSpace(name)), slug.Make(name),
+	})
+}
+
+func (c *Cocktail) PushImage(sourceUrl, attribution string) {
+	relativeUrl := md5.Sum([]byte(sourceUrl))
+
+	c.Images = append(c.Images, Image{
+		sourceUrl, fmt.Sprintf("cocktails/%s/%s/original.jpg", c.Cid, hex.EncodeToString(relativeUrl[:])), attribution,
+	})
 }
 
 func getDocumentFromUrl(url string) (*goquery.Document, error) {
