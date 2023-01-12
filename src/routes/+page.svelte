@@ -1,8 +1,8 @@
-<div class="flex flex-col h-screen bg-white">
+<div class="flex flex-col h-screen bg-tipplers-lightest">
 	<div class="m-auto max-w-3xl pt-20 pb-32 sm:pt-48 sm:pb-40">
 		<h1 class="text-3xl font-bold text-center underline font-serif mb-4">Tippler's Gallery</h1>
 		<h2 class="text-4xl font-bold tracking-tight sm:text-center sm:text-6xl">A <span class="text-tipplers-primary">compendium</span> of the <i class="font-serif text-tipplers-primary/80 font-normal">finest</i> cocktail recipes.</h2>
-		<p class="mt-6 text-lg leading-8 text-gray-600 sm:text-center">This project is currently under heavy development and <span class="italic underline font-serif">coming soon</span>. In the mean time, feel free to download the current library of delicious boozy concoctions below.</p>
+		<p class="mt-6 text-lg leading-8 text-slate-800 sm:text-center">This project is currently under heavy development and <span class="italic underline font-serif">coming soon</span>. In the mean time, feel free to download the current library of delicious boozy concoctions below.</p>
 		<div class="mt-8 flex gap-x-4 sm:justify-center">
 			<a href="/cocktails.json" class="inline-block rounded-lg bg-tipplers-primary px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-md hover:bg-tipplers-primary/90">
 				Download
@@ -13,14 +13,14 @@
 		</div>
 	</div>
 
-	<footer class="text-center text-sm text-slate-300 mt-16 mb-4">
+	<footer class="text-center text-sm text-slate-500 mt-16 mb-4">
 		Made with
 		<svg class="w-6 h-6 text-red-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
 		by
 		<a href="https://wilhelm.codes" title="It me." class="font-semibold border-b hover:text-slate-400">wilhelm</a>
 		<img class="inline-block h-6 w-6 rounded-full border-2 border-slate-300 hover:border-slate-400 jello-animation" src="https://s.gravatar.com/avatar/7cc6bee5975704b299bd7355e8ba9356?s=40" alt="It me." />
 		<!-- svelte-ignore missing-declaration -->
-		<div class="text-center text-sm text-slate-200 mt-2.5 font-mono">{__BUILD_NUMBER__}</div>
+		<div class="text-center text-sm text-tipplers-secondary mt-2.5 font-mono">{__BUILD_NUMBER__}</div>
 	</footer>
 </div>
 
