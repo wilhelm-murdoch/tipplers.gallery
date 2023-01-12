@@ -15,7 +15,13 @@
 
 	<footer class="text-center text-sm text-slate-500 mt-16 mb-4">
 		Made with
-		<svg class="w-6 h-6 text-red-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
+		<svg class="w-5 h-5 text-slate-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+			<path
+				clip-rule="evenodd"
+				fill-rule="evenodd"
+				d="M10.5 3.798v5.02a3 3 0 01-.879 2.121l-2.377 2.377a9.845 9.845 0 015.091 1.013 8.315 8.315 0 005.713.636l.285-.071-3.954-3.955a3 3 0 01-.879-2.121v-5.02a23.614 23.614 0 00-3 0zm4.5.138a.75.75 0 00.093-1.495A24.837 24.837 0 0012 2.25a25.048 25.048 0 00-3.093.191A.75.75 0 009 3.936v4.882a1.5 1.5 0 01-.44 1.06l-6.293 6.294c-1.62 1.621-.903 4.475 1.471 4.88 2.686.46 5.447.698 8.262.698 2.816 0 5.576-.239 8.262-.697 2.373-.406 3.092-3.26 1.47-4.881L15.44 9.879A1.5 1.5 0 0115 8.818V3.936z"
+			/>
+		</svg>
 		by
 		<a href="https://wilhelm.codes" title="It me." class="font-semibold border-b hover:text-slate-400">wilhelm</a>
 		<img class="inline-block h-6 w-6 rounded-full border-2 border-slate-300 hover:border-slate-400 jello-animation" src="https://s.gravatar.com/avatar/7cc6bee5975704b299bd7355e8ba9356?s=40" alt="It me." />

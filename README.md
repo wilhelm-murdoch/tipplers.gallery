@@ -1,16 +1,26 @@
-Make Me A Cocktial
+# Tippler's Gallery
+A compendium of the finest cocktail recipes.
+
+## Install Locally
+Ensure you're using a recent version of `node`. This project was initially built using `19.3.0`. 
+
+> Before you continue, be warned that this is a large repository. To keep costs down, I do not keep the associated plant images in remote object storage like S3. They are all stored here. So, if you're not comfortable with using over 1.5GB of local block storage to play with this project, you may want to take a pass.
 
 ```
-curl 'https://makemeacocktail.com/scripts/ajaxcalls.php?ajaxcall=updateResults' \
-  --data-raw 'ajaxurl=scripts/ajaxcalls.php?ajaxcall=updateResults&scid=885300&numPerPage=10&sortBy=c_score&pageNum=2000' \
-  --compressed
-```
-Grab the cocktail id from the `data-cid=` attribute. Use the value of this attribute in the following URL structure:
-```
-https://makemeacocktail.com/cocktail/{id}/cocktail-name/
-```
-`cocktail-name` can literally be anything. The id is the canonical path to the target page; follow the redirect.
+git clone https://github.com/wilhelm-murdoch/plantsm.art.git
+cd plantsm.art
+npm install
+npm run dev
 
-Difford's Guide
-https://www.diffordsguide.com/en-au/cocktails/search?ingredient%5B%5D=g-58&ingredient%5B%5D=g-68&ingredient%5B%5D=g-1&ingredient%5B%5D=g-52&ingredient%5B%5D=g-63&ingredient%5B%5D=g-23&ingredient%5B%5D=g-124&ingredient%5B%5D=g-142&include%5Bdg%5D=1&limit=80&sort=rating&offset=80
+> plantsm.art@0.0.1 dev
+> vite dev
 
+
+  VITE v4.0.4  ready in 1250 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h to show help
+```
+
+Open a browser window and point it to [http://localhost:5173/](http://localhost:5173/). You should now be able to modify anything under `/src` and the local dev build will perform a live update in your browser.
