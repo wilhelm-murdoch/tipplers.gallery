@@ -17,9 +17,7 @@
 			{#each data.cocktails.slice(0, 12) as cocktail}
 				<div class="relative shadow-sm rounded-2xl bg-white overflow-hidden isolate">
 					<div class="flex cursor-pointer max-h-64 overflow-hidden">
-						<div class="overflow-hidden">
-							<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
-						</div>
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
 						<a href={cocktail.source_url} target="_blank" rel="noreferrer" title="">
 							<span class="absolute top-64 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-1 ring-4 ring-white/50 rounded-full overflow-hidden bg-white">
 								<img class="h-6 w-6" src="https://www.thebar.com/icons/apple-touch-icon.png" alt="" />
