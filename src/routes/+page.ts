@@ -1,7 +1,7 @@
-import cocktails from './cocktails.json';
+// import cocktails from './cocktails.json';
 
-export const load = async () => {
-  return {
-    cocktails: cocktails
-  }
-}
+// export const load = async () => {
+//   return {
+//     cocktails: cocktails
+//   }
+// }

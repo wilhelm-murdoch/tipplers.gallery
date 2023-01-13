@@ -1,27 +1,27 @@
+<script lang="ts">
+	export let data: any;
+</script>
+
 <div class="flex flex-col h-screen bg-tipplers-lightest/50 overflow-auto p-4">
-	<div class="m-auto max-w-3xl">
-		<h1 class="text-3xl font-bold text-center underline font-serif mb-4">Tippler's Gallery</h1>
-		<h2 class="font-bold tracking-tight text-center text-6xl">A <span class="text-tipplers-primary">compendium</span> of the <i class="font-serif text-tipplers-primary/80 font-normal">finest</i> cocktail recipes.</h2>
-		<p class="mt-6 text-lg leading-8 text-slate-800 text-center">This project is currently under heavy development and <span class="italic underline font-serif">coming soon</span>. In the mean time, feel free to download the current library of delicious boozy concoctions below.</p>
-		<div class="mt-8 flex gap-x-4 justify-center">
-			<a href="/cocktails.json" class="inline-block rounded-lg bg-gradient-to-tr from-tipplers-primary to-blue-500 px-4 py-1.5 text-base font-semibold leading-7 text-white shadow-md hover:bg-tipplers-primary/90">
-				Download
-				<svg class="inline-block h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M12 9.75v6.75m0 0l-3-3m3 3l3-3m-8.25 6a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
-				</svg>
-			</a>
+	<div class="container mx-auto max-w-7xl">
+		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+			{#each data.cocktails as cocktail}
+				<div class="relative shadow-sm rounded-b-2xl">
+					<div class="flex bg-white shadow-md cursor-pointer max-h-64 overflow-hidden rounded-tr-2xl rounded-tl-2xl">
+						<img class="hover:scale-125 ease-in duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
+						<a href={cocktail.source_url} target="_blank" rel="noreferrer" title="">
+							<span class="absolute top-64 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-1 ring-4 ring-white/50 rounded-full overflow-hidden bg-white">
+								<img class="h-6 w-6" src="https://www.thebar.com/icons/apple-touch-icon.png" alt="" />
+							</span>
+						</a>
+					</div>
+					<div class="bg-white bottom-0 w-full text-center py-6 font-bold rounded-b-2xl font-serif">
+						<h3 class="underline">{cocktail.name}</h3>
+					</div>
+				</div>
+			{/each}
 		</div>
 	</div>
-
-	<footer class="text-center text-sm text-slate-400 mt-16 mb-4">
-		Made with
-		<svg class="w-6 h-6 text-red-600 inline-block heartbeat-animation" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" /></svg>
-		by
-		<a href="https://wilhelm.codes" title="It me." class="font-semibold border-b hover:text-slate-400">wilhelm</a>
-		<img class="inline-block h-6 w-6 rounded-full border-2 border-slate-300 hover:border-slate-400 jello-animation" src="https://s.gravatar.com/avatar/7cc6bee5975704b299bd7355e8ba9356?s=40" alt="It me." />
-		<!-- svelte-ignore missing-declaration -->
-		<div class="text-center text-sm text-tipplers-secondary mt-2.5 font-mono">{__BUILD_NUMBER__}</div>
-	</footer>
 </div>
 
 <style>
