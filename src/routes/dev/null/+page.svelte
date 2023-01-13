@@ -17,7 +17,7 @@
 			{#each data.cocktails.slice(0, 12) as cocktail}
 				<div class="relative shadow-sm rounded-b-2xl">
 					<div class="flex bg-white shadow-md cursor-pointer max-h-64 overflow-hidden rounded-tr-2xl rounded-tl-2xl">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={cocktail.images[0].source_url} alt="" />
 						<a href={cocktail.source_url} target="_blank" rel="noreferrer" title="">
 							<span class="absolute top-64 left-1/2 transform -translate-x-1/2 -translate-y-1/2 p-1 ring-4 ring-white/50 rounded-full overflow-hidden bg-white">
 								<img class="h-6 w-6" src="https://www.thebar.com/icons/apple-touch-icon.png" alt="" />
@@ -38,16 +38,16 @@
 			<div class="relative shadow-md rounded-2xl bg-white overflow-hidden">
 				<div class="grid grid-cols-2 cursor-pointer">
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[0].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[0].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[3].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[3].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[7].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[7].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[11].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[11].images[0].source_url} alt="" />
 					</div>
 				</div>
 				<div class="absolute flex -space-x-3 overflow-hidden left-1/2 transform -translate-x-1/2 -translate-y-1/2">
@@ -77,16 +77,16 @@
 			<div class="relative shadow-md rounded-2xl bg-white overflow-hidden">
 				<div class="grid grid-cols-2 cursor-pointer">
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[43].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[43].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[33].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[33].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[71].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[71].images[0].source_url} alt="" />
 					</div>
 					<div class="overflow-hidden">
-						<img class="hover:scale-125 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[138].images[0].source_url} alt="" />
+						<img class="hover:scale-110 ease-in-out duration-500 w-full object-cover object-center" src={data.cocktails[138].images[0].source_url} alt="" />
 					</div>
 				</div>
 				<div class="absolute flex -space-x-3 overflow-hidden left-1/2 transform -translate-x-1/2 -translate-y-1/2">
