@@ -27,7 +27,8 @@ const config = {
 		},
 		prerender: {
 			entries: [
-				"/"
+				"/",
+				"/dev/null"
 			],
 		},
 	},
