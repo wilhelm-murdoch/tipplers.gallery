@@ -6,7 +6,7 @@ Ensure you're using a recent version of `node`. This project was initially built
 
 ```
 git clone https://github.com/wilhelm-murdoch/tipplers.gallery.git
-cd plantsm.art
+cd tipplers.gallery
 npm install
 npm run dev
 
