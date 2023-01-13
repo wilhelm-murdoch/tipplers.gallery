@@ -10,7 +10,7 @@ cd plantsm.art
 npm install
 npm run dev
 
-> plantsm.art@0.0.1 dev
+> tipplers.gallery@0.0.1 dev
 > vite dev
 
 
