@@ -32,7 +32,7 @@
 		</div>
 	</div>
 
-	<h3 class="font-serif font-bold text-2xl border-b border-tipplers-secondary my-4" id="result-cards">Collection Cards</h3>
+	<h3 class="font-serif font-bold text-2xl border-b border-tipplers-secondary my-4" id="collection-cards">Collection Cards</h3>
 	<div class="container mx-auto max-w-7xl">
 		<div class="grid grid-cols-1 gap-6 md:grid-cols-2 pb-4">
 			<div class="relative shadow-md rounded-2xl bg-white overflow-hidden">
