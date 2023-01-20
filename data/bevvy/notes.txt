@@ -1,0 +1,1 @@
+https://api.bevvy.co/v0/tags/tags?content_id={.drink_id}&content_type=drink
