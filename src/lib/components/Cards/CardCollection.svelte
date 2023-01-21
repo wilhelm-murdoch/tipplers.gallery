@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { lazy } from '$lib/utils/lazy';
+	import { getImageUrl } from '$lib/utils/urls';
 
 	export let cocktails: any[];
 </script>
@@ -7,8 +8,8 @@
 <div class="relative shadow-sm rounded-2xl bg-white overflow-hidden isolate">
 	<div class="grid grid-cols-3 cursor-pointer">
 		{#each cocktails as cocktail}
-			<div class="overflow-hidden background-fallback border-b border-tipplers-primary/30 bg-tipplers-primary/20">
-				<img class="is-lazy hover:scale-110 ease-in-out duration-500 aspect-square object-cover object-center hover:z-0" use:lazy={'/' + cocktail.images[0].relative_path.replace('/original', '/medium')} alt="" />
+			<div class="overflow-hidden background-fallback bg-tipplers-primary/20">
+				<img class="is-lazy hover:scale-110 ease-in-out duration-500 inset-0 aspect-square h-full w-full object-cover object-center" use:lazy={getImageUrl(cocktail.images[0].relative_path, "medium")} alt="" />
 			</div>
 		{/each}
 	</div>

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { lazy } from '$lib/utils/lazy';
 	import { fade } from 'svelte/transition';
+	import { getImageUrl } from '$lib/utils/urls';
 
 	export let cocktail: any;
 </script>
@@ -8,7 +9,7 @@
 <div in:fade class="bg-white rounded-xl shadow-sm overflow-hidden h-auto">
 	<div class="grid grid-cols-1 md:grid-cols-4">
 		<div class="relative background-fallback cursor-pointer overflow-hidden border-0 lg:border-r border-tipplers-primary/30 bg-tipplers-primary/20">
-			<img class="is-lazy hover:scale-110 ease-in-out duration-500 aspect-square w-full h-auto md:w-full md:h-full object-cover object-center" use:lazy={'/' + cocktail.images[0].relative_path.replace('/original', '/medium')} alt="" />
+			<img class="is-lazy hover:scale-110 ease-in-out duration-500 aspect-square w-full h-auto md:w-full md:h-full object-cover object-center" use:lazy={getImageUrl(cocktail.images[0].relative_path, "medium")} alt="" />
 			<span class="absolute bottom-2 left-2 rounded-md bg-black/50 px-2 py-1 text-white text-xs">
 				<svg class="w-4 h-4 inline-block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zM13.5 9.17a3 3 0 100 5.659" stroke-linecap="round" stroke-linejoin="round" />
