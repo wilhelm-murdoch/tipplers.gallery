@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Footer from '$components/Footer/Footer.svelte';
-	import Logo from '$components/Logo/Logo.svelte';
+	import LogoLarge from '$components/Logo/LogoLarge.svelte';
 	import SvelteSeo from 'svelte-seo';
 
 	const twitterMeta = {
@@ -27,7 +27,7 @@
 
 <div class="flex flex-col h-screen bg-tipplers-lightest/50 overflow-auto p-4 select-none">
 	<div class="m-auto">
-		<Logo />
+		<LogoLarge />
 	</div>
 
 	<Footer />
