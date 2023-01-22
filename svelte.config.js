@@ -29,6 +29,7 @@ const config = {
 			entries: [
 				"/",
 				"/search",
+				"/compendium",
 				"/dev/null"
 			],
 		},
