@@ -47,7 +47,7 @@
 
 	<div class="container mx-auto max-w-7xl">
 		<h3 class="font-serif font-bold text-2xl border-b border-tipplers-secondary my-4" id="crossfade-grid">Crossfade Grid</h3>
-		<GridCrossfade images={cocktails.slice(0, 48).map((c) => getImageUrl(c.images[0].relative_path, 'thumbnail'))} wrapperClasses="grid grid-cols-12" />
+		<GridCrossfade images={cocktails.map((c) => getImageUrl(c.images[0].relative_path, 'thumbnail'))} wrapperClasses="grid grid-cols-12" />
 	</div>
 
 	<div class="container mx-auto max-w-7xl">

@@ -1,3 +1,6 @@
+export { default as Logo } from './Logo/Logo.svelte';
+export { default as Footer } from './Footer/Footer.svelte';
+
 export { default as CardResult } from './Cards/CardResult.svelte';
 export { default as CardSlim } from './Cards/CardSlim.svelte';
 export { default as CardSummary } from './Cards/CardSummary.svelte';
