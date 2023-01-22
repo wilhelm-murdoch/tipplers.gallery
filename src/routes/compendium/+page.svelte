@@ -41,7 +41,7 @@
 			<nav class="flex justify-between py-5 bg-white overflow-x-auto">
 				{#each charsNav as item, i}
 					{#if item.cocktails.length}
-						<a class="rounded-md px-4 py-2.5 hover:bg-tipplers-secondary/50" href="#{item.char}" title={item.char}>
+						<a class="rounded-md px-4 py-2.5 hover:bg-tipplers-primary hover:text-white" href="#{item.char}" title={item.char}>
 							{item.char}
 						</a>
 					{:else}
