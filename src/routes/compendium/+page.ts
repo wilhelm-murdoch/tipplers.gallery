@@ -1,6 +1,6 @@
 import { getBaseUrl } from "$lib/utils/urls";
 
-export const load = async ({ fetch }) => {
+export const load = async () => {
   const response = await fetch(getBaseUrl() + `/api/cocktails-thebar.json`);
 
   let cocktails = await response.json();
