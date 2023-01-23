@@ -30,7 +30,8 @@ const config = {
 				"/",
 				"/search",
 				"/compendium",
-				"/dev/null"
+				"/dev/null",
+				"/compendium/tags/[slug]"
 			],
 		},
 	},

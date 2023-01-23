@@ -34,5 +34,16 @@ export interface Cocktail {
 }
 
 export interface Cocktails {
-  cocktails: Cocktail[]
+  cocktails: Cocktail[];
+}
+
+export interface Tag {
+  name: string;
+  slug: string;
+  count: number;
+  tags: string[];
+}
+
+export interface Tags {
+  tags: Tag[];
 }

@@ -1,8 +1,13 @@
 import { getBaseUrl } from "$lib/utils/urls";
 
 export const load = async () => {
-  const res = await fetch(getBaseUrl() + `/api/cocktails-thebar.json`);
-  let cocktails = await res.json();
+  const response = await fetch(getBaseUrl() + `/api/tags.json`);
 
-  return { cocktails };
+  let tags = await response.json();
+
+  if (response.status === 200) {
+    return { tags };
+  }
+
+  throw new Error(response.statusText);
 }

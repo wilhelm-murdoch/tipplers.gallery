@@ -1,9 +1,8 @@
 <script lang="ts">
-	import { CardSlim, Footer, Header, NavigationFilter, NavigationSub } from '$components';
+	import { CardSlim, NavigationFilter, NavigationSub } from '$components';
 	import type { NavigationItem } from '$components/Navigation/utils';
 	import type { Cocktails, Cocktail } from '$lib/utils/types';
 	import { onMount } from 'svelte';
-	import SvelteSeo from 'svelte-seo';
 	import { fade } from 'svelte/transition';
 	import { navigationItems } from './utils';
 
