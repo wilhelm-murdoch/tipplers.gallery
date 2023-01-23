@@ -38,7 +38,7 @@
 {#if images.length}
 	<div class={wrapperCompositeClasses} in:fade>
 		{#each selected as image, i}
-			<div class="relative overflow-hidden aspect-square" transition:fade={{ delay: i * 50 }}>
+			<div class="relative overflow-hidden aspect-square" in:fade={{ delay: i * 50 }}>
 				{#key image}
 					<img src={image} class={imageCompositeClasses} alt="Image #{i}" transition:fade={{ duration: 1000 }} />
 				{/key}

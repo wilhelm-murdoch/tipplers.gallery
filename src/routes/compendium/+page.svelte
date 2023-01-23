@@ -1,5 +1,6 @@
 <script lang="ts">
 	import CardSlim from '$components/Cards/CardSlim.svelte';
+	import CardSlimLoading from '$components/Cards/CardSlimLoading.svelte';
 	import Footer from '$components/Footer/Footer.svelte';
 	import Header from '$components/Header/Header.svelte';
 	import { onMount } from 'svelte';
@@ -82,8 +83,8 @@
 			<section>
 				<h3 id={item.char} class="py-8 text-2xl font-semibold font-serif border-b border-slate-50 bg-tipplers-lightest/25">
 					<span class="underline">{item.char}</span>
-					<span class="bg-white px-2 py-1 rounded shadow-sm text-xs font-normal font-sans align-top">
-						<strong>{item.cocktails.length}</strong>
+					<span class="bg-white px-2 py-1 rounded shadow-sm text-xs font-sans align-top">
+						{item.cocktails.length}
 					</span>
 				</h3>
 				<div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">

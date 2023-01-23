@@ -26,7 +26,7 @@
 </script>
 
 <div class="flex flex-col h-screen bg-tipplers-lightest/50 overflow-auto p-4 select-none">
-	<div class="m-auto">
+	<div class="m-auto w-3/4">
 		<LogoLarge />
 	</div>
 
