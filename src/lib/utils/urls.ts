@@ -5,6 +5,5 @@ export const getImageUrl = (path: string, variant: string) => {
 }
 
 export const getBaseUrl = () => {
-  return ""
   return dev || building ? "http://localhost:5173" : "https://tipplers.gallery"
 }
