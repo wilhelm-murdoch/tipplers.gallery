@@ -1,20 +1,23 @@
 <script lang="ts">
-	import Footer from '$components/Footer/Footer.svelte';
-	import Header from '$components/Header/Header.svelte';
-	import NavigationSub from '$components/Navigation/NavigationSub.svelte';
+	import { NavigationSub, NavigationFilter } from '$components';
+	import type { NavigationItem } from '$components/Navigation/utils';
+	import { onMount } from 'svelte';
 	import { navigationItems } from '../utils';
 
-	export let data: any;
+	let alphaNumericFilterItems: NavigationItem[] = [];
+
+	onMount(() => {
+		alphaNumericFilterItems = '#abcdefghijklmnopqrstuvwxyz'.split('').map((c) => {
+			return {
+				name: c.toUpperCase(),
+				slug: c,
+				path: '',
+				title: 'Filter cocktails starting with "' + c + '".',
+				count: 0
+			};
+		});
+	});
 </script>
 
-<div class="px-2">
-	<Header />
-</div>
-
-<div class="max-w-7xl mx-auto text-center py-10">
-	<h2 class="text-6xl font-thin italic">The Compendium</h2>
-</div>
-
 <NavigationSub items={navigationItems} active="tags" />
-
-<Footer />
+<NavigationFilter items={alphaNumericFilterItems} active="a" />

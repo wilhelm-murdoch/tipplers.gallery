@@ -2,8 +2,11 @@
 	import type { NavigationItem } from './utils';
 	import { createEventDispatcher } from 'svelte';
 
+	const wrapperBaseClassList = 'bg-white border-y';
+
 	export let items: NavigationItem[];
 	export let active: string;
+	export let wrapperClasses: string = '';
 
 	const dispatch = createEventDispatcher();
 
@@ -11,9 +14,11 @@
 		active = item.slug;
 		dispatch('click', item);
 	};
+
+	$: wrapperCompositeClasses = `${wrapperBaseClassList} ${wrapperClasses}`;
 </script>
 
-<div class="bg-white border-y">
+<div class={wrapperCompositeClasses}>
 	<div class="max-w-7xl mx-auto">
 		<nav class="flex justify-between py-5 bg-white overflow-x-auto">
 			{#each items as item, i}

@@ -1,18 +1,31 @@
 <script>
-	import LogoSmall from '$components/Logo/LogoSmall.svelte';
+	import { LogoSmall } from '$components';
 </script>
 
-<div class="max-w-7xl mx-auto select-none">
+<div class="md:hidden text-center py-2">
+	<div class="space-x-6">
+		<a class="border-b border-black hover:text-slate-600 hover:boder-slate-600" href="/search" title="">Search</a>
+		<a class="border-b border-black hover:text-slate-600 hover:boder-slate-600" href="/collections" title="">Collections</a>
+		<a class="border-b border-black hover:text-slate-600 hover:boder-slate-600" href="/compendium" title="">Compendium</a>
+		<a class="hidden" href="/glossary" title="">Glossary</a>
+		<a class="border-b border-black hover:text-slate-600 hover:boder-slate-600" href="/about" title="">About</a>
+	</div>
+	<div class="">
+		<LogoSmall />
+	</div>
+</div>
+
+<div class="hidden md:block max-w-7xl mx-auto select-none">
 	<div class="grid grid-cols-2">
 		<div><LogoSmall /></div>
-		<div class="prose text-right mt-9 space-x-4">
-			<a href="/" title="">Home</a>
+		<div class="prose text-right mt-9 space-x-2 lg:space-x-4">
 			<a href="/search" title="">Search</a>
+			<a href="/collections" title="">Collections</a>
 			<a href="/compendium" title="">Compendium</a>
 			<a class="hidden" href="/glossary" title="">Glossary</a>
 			<a href="/about" title="">About</a>
 
-			<a href="https://github.com/wilhelm-murdoch/tipplers.gallery" title="GitHub" class="border-l pl-4 text-tipplers-secondary/75 hover:text-tipplers-secondary inline-block align-middle border-r-slate-100">
+			<a href="https://github.com/wilhelm-murdoch/tipplers.gallery" title="GitHub" class="hidden border-l pl-4 text-tipplers-secondary/75 hover:text-tipplers-secondary lg:inline-block align-middle border-r-slate-100">
 				<span class="sr-only">GitHub</span>
 				<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path
@@ -23,7 +36,7 @@
 				</svg>
 			</a>
 
-			<a href="https://ko-fi.com/devilmaycode" title="Ko-fi" class="text-tipplers-secondary/75 hover:text-tipplers-secondary inline-block align-middle border-r-slate-100">
+			<a href="https://ko-fi.com/devilmaycode" title="Ko-fi" class="hidden text-tipplers-secondary/75 hover:text-tipplers-secondary lg:inline-block align-middle border-r-slate-100">
 				<span class="sr-only">Ko-fi</span>
 				<svg class="h-8 w-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
 					<path
