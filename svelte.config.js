@@ -29,8 +29,13 @@ const config = {
 			entries: [
 				"/",
 				"/search",
-				"/compendium",
 				"/dev/null",
+				"/compendium",
+				"/compendium/tags",
+				"/compendium/spirits",
+				"/compendium/glassware",
+				"/compendium/ingredients",
+				"/compendium/equipment",
 				"/compendium/tags/[slug]"
 			],
 		},
