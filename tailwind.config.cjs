@@ -6,7 +6,7 @@ module.exports = {
 		extend: {
 			colors: {
 				'tipplers-primary': 'rgb(87, 155, 177)',
-				'tipplers-secondary': 'rgb(225, 215, 198)',
+				'tipplers-secondary': 'rgb(201 188 165)',
 				'tipplers-lighter': 'rgb(236, 232, 221)',
 				'tipplers-lightest': 'rgb(248, 244, 234)',
 			}

@@ -1,34 +1,35 @@
 <script lang="ts">
-	import CardSlim from '$components/Cards/CardSlim.svelte';
-	import CardSlimLoading from '$components/Cards/CardSlimLoading.svelte';
-	import Footer from '$components/Footer/Footer.svelte';
-	import Header from '$components/Header/Header.svelte';
+	import { CardSlim, Footer, Header, NavigationFilter, NavigationSub } from '$components';
+	import type { NavigationItem } from '$components/Navigation/utils';
+	import type { Cocktails, Cocktail } from '$lib/utils/types';
 	import { onMount } from 'svelte';
 	import SvelteSeo from 'svelte-seo';
 	import { fade } from 'svelte/transition';
+	import { navigationItems } from './utils';
 
-	let data: any;
+	export let data: Cocktails;
 
-	const load = async () => {
-		const res = await fetch(`/api/cocktails-thebar.json`);
-		let cocktails = await res.json();
+	let alphaNumericFilterItems: NavigationItem[] = [];
+	let filtered: Cocktail[] = [];
+	let activeFilter: string = 'a';
 
-		return { cocktails };
+	const handleFilterItemClick = (e: any) => {
+		activeFilter = e.detail.slug;
+		filtered = data.cocktails.filter((v) => v.name[0].toLowerCase() === e.detail.slug);
 	};
 
-	const chars: string = '#abcdefghijklmnopqrstuvwxyz';
-	let charsNav: any[] = [];
+	onMount(() => {
+		filtered = data.cocktails.filter((v) => v.name[0].toLowerCase() === activeFilter);
 
-	onMount(async () => {
-		data = await load();
-		chars.split('').forEach((c) => {
-			charsNav.push({
-				char: c.toUpperCase(),
-				cocktails: data.cocktails.filter((v: any) => v.name[0].toLowerCase() === c)
-			});
+		alphaNumericFilterItems = '#abcdefghijklmnopqrstuvwxyz'.split('').map((c) => {
+			return {
+				name: c.toUpperCase(),
+				slug: c,
+				path: '#',
+				title: 'Filter cocktails starting with "' + c + '".',
+				count: data.cocktails.filter((v) => v.name[0].toLowerCase() === c).length
+			};
 		});
-
-		charsNav = charsNav;
 	});
 
 	const twitterMeta = {
@@ -58,45 +59,30 @@
 </div>
 
 <div class="max-w-7xl mx-auto text-center py-10">
-	<h2 class="text-6xl font-thin italic">The Compendium</h2>
+	<h2 class="text-6xl font-thin italic text-tipplers-secondary">The Compendium</h2>
 </div>
 
-<div class="bg-white border-y">
-	<div class="max-w-7xl mx-auto">
-		<nav class="flex justify-between py-5 bg-white overflow-x-auto">
-			{#each charsNav as item, i}
-				{#if item.cocktails.length}
-					<a class="rounded-md px-4 py-2.5 hover:bg-tipplers-primary hover:text-white" href="#{item.char}" title={item.char}>
-						{item.char}
-					</a>
-				{:else}
-					<span class="px-4 py-2.5 text-tipplers-secondary">{item.char}</span>
-				{/if}
-			{/each}
-		</nav>
-	</div>
-</div>
+<NavigationSub items={navigationItems} active="a-z" />
+<NavigationFilter items={alphaNumericFilterItems} active={activeFilter} on:click={handleFilterItemClick} />
 
 <div class="max-w-7xl mx-auto px-2">
-	{#each charsNav as item, i}
-		{#if item.cocktails.length}
-			<section>
-				<h3 id={item.char} class="py-8 text-2xl font-semibold font-serif border-b border-slate-50 bg-tipplers-lightest/25">
-					<span class="underline">{item.char}</span>
-					<span class="bg-white px-2 py-1 rounded shadow-sm text-xs font-sans align-top">
-						{item.cocktails.length}
-					</span>
-				</h3>
-				<div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
-					{#each item.cocktails as cocktail, i}
-						<div in:fade={{ delay: i * 100 }}>
-							<CardSlim name={cocktail.name} src={cocktail.images[0].relative_path} from={cocktail.meta.sourced_from} attribution={cocktail.images[0].attribution} url={cocktail.meta.source_url} />
-						</div>
-					{/each}
-				</div>
-			</section>
-		{/if}
-	{/each}
+	{#if filtered.length}
+		<section>
+			<h3 id={activeFilter} class="py-8 text-2xl font-semibold font-serif border-b border-slate-50 bg-tipplers-lightest/25">
+				<span class="underline">{activeFilter.toUpperCase()}</span>
+				<span class="bg-white px-2 py-1 rounded shadow-sm text-xs font-sans align-top">
+					{filtered.length}
+				</span>
+			</h3>
+			<div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-6">
+				{#each filtered as cocktail, i (cocktail.cid)}
+					<div in:fade={{ delay: i * 100 }}>
+						<CardSlim name={cocktail.name} src={cocktail.images[0].relative_path} from={cocktail.meta.sourced_from} attribution={cocktail.images[0].attribution} url={cocktail.meta.source_url} />
+					</div>
+				{/each}
+			</div>
+		</section>
+	{/if}
 </div>
 
 <Footer />
