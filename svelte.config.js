@@ -31,12 +31,12 @@ const config = {
 				"/search",
 				"/dev/null",
 				"/compendium",
-				// "/compendium/tags",
+				"/compendium/tags",
+				"/compendium/tags/[slug]"
 				// "/compendium/spirits",
 				// "/compendium/glassware",
 				// "/compendium/ingredients",
 				// "/compendium/equipment",
-				// "/compendium/tags/[slug]"
 			],
 		},
 	},

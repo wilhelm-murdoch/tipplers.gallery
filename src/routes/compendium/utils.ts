@@ -12,12 +12,14 @@ export const navigationItems: NavigationItem[] = [
   //   slug: "spirits",
   //   title: "An alphabetical listing of cocktails by primary spirits.",
   //   path: "/compendium/spirits",
-  // }, {
-  //   name: "Tags",
-  //   slug: "tags",
-  //   title: "An alphabetical listing of cocktails by assigned tag.",
-  //   path: "/compendium/tags",
-  // }, {
+  // }, 
+  {
+    name: "Tags",
+    slug: "tags",
+    title: "An alphabetical listing of cocktails by assigned tag.",
+    path: "/compendium/tags",
+  },
+  // {
   //   name: "Ingredients",
   //   slug: "ingredients",
   //   title: "An alphabetical listing of cocktails by ingredient.",
