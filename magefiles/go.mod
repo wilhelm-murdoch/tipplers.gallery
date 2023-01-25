@@ -19,6 +19,7 @@ require (
 	github.com/PuerkitoBio/goquery v1.8.0
 	github.com/gosimple/slug v1.13.1
 	github.com/grokify/html-strip-tags-go v0.0.1
+	github.com/mattn/go-sqlite3 v1.14.16
 	github.com/schollz/progressbar/v3 v3.13.0
 	github.com/wilhelm-murdoch/go-collection v1.0.10
 	golang.org/x/text v0.3.6

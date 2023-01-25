@@ -1,6 +1,6 @@
 import { getBaseUrl } from "$lib/utils/urls";
 
-export const load = async () => {
+export const load = async ({ fetch, params }) => {
   const response = await fetch(getBaseUrl() + `/api/tags.json`);
 
   let tags = await response.json();

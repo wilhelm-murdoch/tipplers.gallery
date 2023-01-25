@@ -17,7 +17,7 @@ import (
 	"golang.org/x/text/language"
 )
 
-var spirits = []string{"absinthe", "brandy", "mezcal", "whiskey", "whisky", "rum", "gin", "vodka", "tequila"}
+var spirits = []string{"absinthe", "brandy", "mezcal", "whiskey", "whisky", "rum", "gin", "vodka", "tequila", "scotch", "bourbon", "cognac"}
 
 type Ingredient struct {
 	Name        string  `json:"name"`

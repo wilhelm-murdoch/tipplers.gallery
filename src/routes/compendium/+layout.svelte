@@ -29,7 +29,7 @@
 </div>
 
 <div class="max-w-7xl mx-auto text-center pt-5 pb-10 md:pt-10">
-	<h2 class="text-4xl md:text-6xl font-thin italic text-tipplers-secondary">The Compendium</h2>
+	<h2 class="text-4xl md:text-6xl font-thin italic text-tipplers-secondary">Compendium</h2>
 </div>
 
 <slot />
